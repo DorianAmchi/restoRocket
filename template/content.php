@@ -1,5 +1,6 @@
-<?php
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/content/modalUser.php'; ?>
 
+<?php
 
 if (!isset($_GET["page"])) {
     include $_SERVER['DOCUMENT_ROOT'] . '/content/Home.php';
