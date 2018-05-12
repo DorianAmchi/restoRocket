@@ -11,7 +11,6 @@
                 <form class="form-inline" method="post" action="/scripts/connexion.php">
                     <input class="form-control mr-sm-2" name="usernameCo" placeholder="Username" aria-label="Username">
                     <input class="form-control mr-sm-2" name="passwordCo" placeholder="Password" aria-label="Password">
-                    <button class="btn btn-outline-info my-2 my-sm-0" >Connexion</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -35,7 +34,6 @@
                 <form class="form-inline" method="post" action="/scripts/connexion.php">
                     <input class="form-control mr-sm-2" name="usernameIn" placeholder="Username" aria-label="Username">
                     <input class="form-control mr-sm-2" name="passwordIn" placeholder="Password" aria-label="Password">
-                    <button class="btn btn-outline-info my-2 my-sm-0" >Connexion</button>
                 </form>
             </div>
             <div class="modal-footer">
