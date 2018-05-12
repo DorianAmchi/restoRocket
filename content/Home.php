@@ -1,8 +1,7 @@
-
-<p> "bikouir" </p>
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+<div class='container col-md-auto home'>
+    <div class="row">
+        <img  class="img-fluid wallpaper" src= "/img/restaurant.jpg">
+        <h3 class="msgAccueil">Bienvenue sur <br> Restologue</h3>
+    </div>
+</div>
 

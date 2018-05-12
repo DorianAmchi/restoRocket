@@ -1,0 +1,13 @@
+.home{
+    position : relative;
+}
+
+.msgAccueil{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font-family: "Courier New"; 
+    font-size: 60px;
+    font-weight: bold;
+    color : white;
+}
