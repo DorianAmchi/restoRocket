@@ -11,11 +11,12 @@
                 <form class="form-inline" method="post" action="/scripts/connexion.php">
                     <input class="form-control mr-sm-2" name="usernameCo" placeholder="Username" aria-label="Username">
                     <input class="form-control mr-sm-2" name="passwordCo" placeholder="Password" aria-label="Password">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#modalResult">Connexion</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Inscription</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" type="submit">Connexion</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Inscription</button>
             </div>
         </div>
     </div>
@@ -34,12 +35,17 @@
                 <form class="form-inline" method="post" action="/scripts/connexion.php">
                     <input class="form-control mr-sm-2" name="usernameIn" placeholder="Username" aria-label="Username">
                     <input class="form-control mr-sm-2" name="passwordIn" placeholder="Password" aria-label="Password">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" type="submit">Inscription</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
+                    </div>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" type="submit">Inscription</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
+
+<div id="modalInscription" class="modal" tabindex="-1" role="dialog">
+    <?php include '/scripts/resultConnexion'?>
 </div>
