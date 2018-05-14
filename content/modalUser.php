@@ -13,7 +13,7 @@
                     <input class="form-control mr-sm-2" name="passwordCo" placeholder="Password" aria-label="Password">
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-primary" type="submit" data-toggle="modal" data-target="#modalResult">Connexion</button>
+                        <button class="btn btn-primary" type="submit">Connexion</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Inscription</button>
                     </div>
                 </form>
@@ -46,6 +46,10 @@
     </div>
 </div>
 
-<div id="modalInscription" class="modal" tabindex="-1" role="dialog">
-    <?php include '/scripts/resultConnexion'?>
+<div id="modalResult" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <?php include $_SERVER['DOCUMENT_ROOT'].'/scripts/resultConnexion.php' ?>
+        </div>
+    </div>
 </div>
