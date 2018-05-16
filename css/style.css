@@ -1,0 +1,44 @@
+.page{
+    position : relative;
+}
+
+.msgAccueil{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    font: 400 130px/0.8 'Great Vibes', Helvetica, sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    color : white;
+    line-height: 110px;
+}
+
+.txtCartes, .txtLivre{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 5%;
+    font: 400 100px/0.8 'Great Vibes', Helvetica, sans-serif;
+    font-weight: bold;
+    color : white;
+    line-height: 110px;
+}
+
+.gestionCarte{
+    position: absolute;
+    width: 100%;
+    top: 20%;
+    color : white;
+}
+
+.msg{
+    font: 400 50px/0.8 'Great Vibes', Helvetica, sans-serif;
+        margin-bottom: 10px;
+}
+
+.date, .autor{
+    font: 400 25px/0.8 'Great Vibes', Helvetica, sans-serif;
+    margin-bottom: 40px;
+    display: inline-block;
+}
+   
