@@ -1,3 +1,4 @@
+
 <div class='container col-md-auto page'>
     <div class="row">
         <img  class="img-fluid wallpaper" src= "/img/tableaunoir.jpg">
@@ -5,10 +6,16 @@
     </div>
     <div class='row justify-content-md-center gestionCarte'>
         <div class='col text-center carte'>
-            <p>bijour</p>
+            <?php include 'scripts/getRestaurant.php';
+?>
         </div>
         <div class='col text-center cartes'>  
-            <p>bijour</p>
+            <form class="form-inline">
+                <button class="btn btn-outline-info my-2 my-sm-0" type="button" data-toggle="modal" data-target="#modalResto">Ajouter Un Restaurant</button>
+            </form>
         </div>
     </div>
 </div>
+
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/content/modalCartes.php'; ?>
+

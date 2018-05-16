@@ -12,7 +12,7 @@ $data = http_build_query(array(
     "date" => $date
         ));
 
-$url = "http://192.168.1.46:3000/msg/add";
+$url = "http://192.168.1.54:12110/msg/add";
 
 $ch = curl_init();
 

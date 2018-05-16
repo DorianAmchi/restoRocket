@@ -39,7 +39,6 @@ if (isset($_POST['usernameCo']) && isset($_POST['passwordCo'])) {
         $_SESSION['inscription'] = FALSE;
     } else {
 
-        unset($_SESSION['connexion']);
         $url = "http://192.168.1.54:12108/adduser";
         $data = http_build_query(array(
             'username' => $_POST['usernameIn'],
