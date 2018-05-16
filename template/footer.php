@@ -4,10 +4,16 @@
 <?php
 if ($_SESSION['modal']) {
     ?><script type='text/javascript'>
-            $(document).ready(function () {
-                $('#modalResult').modal('toggle');
-            });</script><?php
+        $(document).ready(function () {
+            $('#modalResult').modal('toggle');
+        });</script><?php
     $_SESSION['modal'] = !$_SESSION['modal'];
+}
+if (isset($_GET['resto'])) {
+    ?><script type = 'text/javascript'>
+            $(document).ready(function () {
+                $('#modalCartes').modal('toggle');
+            });</script><?php
 }
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" crossorigin="anonymous"></script>

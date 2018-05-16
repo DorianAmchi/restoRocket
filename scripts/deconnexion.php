@@ -1,6 +1,5 @@
 <?php
 
- echo 'bijour';
 session_start();
 session_destroy();
 

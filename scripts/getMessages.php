@@ -1,5 +1,5 @@
 <?php
-$url = "http://192.168.1.46:3000/msg/get";
+$url = "http://192.168.1.54:12110/msg/get";
 
 $ch = curl_init();
 
