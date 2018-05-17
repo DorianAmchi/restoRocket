@@ -1,6 +1,6 @@
 <?php
-//Regroupement des modals
 
+//Regroupement des modals
 //Modal de Connexion
 function modalConnexion() {
     ?>
@@ -14,15 +14,12 @@ function modalConnexion() {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-inline" method="post" action="/scripts/connexion.php">
-                        <input class="form-control mr-sm-2" name="usernameCo" placeholder="Username" aria-label="Username">
-                        <input class="form-control mr-sm-2" name="passwordCo" placeholder="Password" aria-label="Password">
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Connexion</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Inscription</button>
-                        </div>
-                    </form>
+                    <input class="form-control mr-sm-2" id="logUsername" placeholder="Username" aria-label="Username">
+                    <input class="form-control mr-sm-2" id="logPassword" placeholder="Password" aria-label="Password">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit" onclick="logIn()">Connexion</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Inscription</button>
                 </div>
             </div>
         </div>
@@ -43,15 +40,12 @@ function modalInscription() {
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-inline" method="post" action="/scripts/connexion.php">
-                        <input class="form-control mr-sm-2" name="usernameIn" placeholder="Username" aria-label="Username">
-                        <input class="form-control mr-sm-2" name="passwordIn" placeholder="Password" aria-label="Password">
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn btn-primary" type="submit">Inscription</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
-                        </div>
-                    </form>
+                    <input class="form-control mr-sm-2" id="signUsername" placeholder="Username" aria-label="Username">
+                    <input class="form-control mr-sm-2" id="signPassword" placeholder="Password" aria-label="Password">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit" onclick="signIn()">Inscription</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
                 </div>
             </div>
         </div>
