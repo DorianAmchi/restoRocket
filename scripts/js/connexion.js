@@ -12,17 +12,10 @@ function logIn() {
         data: user,
         statusCode: {
             200: function (user) {
-                var url = window.location.href;
-                var lastElementIndex = url.length - 1;
-                var lastElement = url[lastElementIndex];
-                //On vérifie la page actuelle pour bien placé les arguments.
-                lastElement === "/" ? document.location = url + "?co=true&user=" + user : document.location = url + "&co=true&user=" + user;
+                document.location = "http://resto-rocket.bwb/&co=true&user=" + user;
             },
             401: function () {
-                var url = window.location.href;
-                var lastElementIndex = url.length - 1;
-                var lastElement = url[lastElementIndex];
-                lastElement === "/" ? document.location = url + "?co=false" : document.location = url + "&co=false";
+                document.location = "http://resto-rocket.bwb/&co=false";
             }
         }
     });
@@ -41,17 +34,11 @@ function signIn() {
         url: "http://192.168.1.54:12108/adduser",
         data: user,
         statusCode: {
-            200: function () {
-                var url = window.location.href;
-                var lastElementIndex = url.length - 1;
-                var lastElement = url[lastElementIndex];
-                lastElement === "/" ? document.location = url + "?in=true" : document.location = url + "&in=true";
+            200: function () { 
+                document.location = "http://resto-rocket.bwb/&in=true";
             },
             401: function () {
-                var url = window.location.href;
-                var lastElementIndex = url.length - 1;
-                var lastElement = url[lastElementIndex];
-                lastElement === "/" ? document.location = url + "?in=false" : document.location = url + "&in=false";
+                document.location = "http://resto-rocket.bwb/?in=false";
             }
         }
     });
