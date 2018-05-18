@@ -1,2 +1,3 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/scripts/php/script.php';?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/scripts/php/scriptsModal.php';?>
+</body>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/scripts/php/scripts.php'; ?>
+</html>

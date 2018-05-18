@@ -30,10 +30,17 @@
             ?> 
         </ul> 
         <?php
-        if ($_SESSION['connexion'] === true) {
+        if (isset($_SESSION['user'])) {
             ?> 
-            <h4><?= $_SESSION['username'] ?></h4> 
-            <form class="form-inline" action="scripts/deconnexion.php"> 
+            <h4><?= $_SESSION['user'] ?></h4> 
+            <form class="form-inline" action="/scripts/php/deconnexion.php"> 
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Deconnexion</button> 
+            </form> 
+            <?php
+        } else if (isset($_GET['user'])) {
+            ?> 
+            <h4><?= $_GET['user'] ?></h4> 
+            <form class="form-inline" action="/scripts/php/deconnexion.php"> 
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Deconnexion</button> 
             </form> 
             <?php

@@ -7,20 +7,10 @@ function modalConnexion() {
     <div id="modalConnexion" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bienvenue sur Restologue.<br> Veuillez vous connecter.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input class="form-control mr-sm-2" id="logUsername" placeholder="Username" aria-label="Username">
-                    <input class="form-control mr-sm-2" id="logPassword" placeholder="Password" aria-label="Password">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit" onclick="logIn()">Connexion</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Inscription</button>
-                </div>
+                <?php
+                $modal = co;
+                modalContent($modal);
+                ?>
             </div>
         </div>
     </div>
@@ -32,50 +22,78 @@ function modalInscription() {
     ?>
     <div id="modalInscription" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Bienvenue sur Restologue.<br> Veuillez vous inscrire pour profiter de nos services.</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input class="form-control mr-sm-2" id="signUsername" placeholder="Username" aria-label="Username">
-                    <input class="form-control mr-sm-2" id="signPassword" placeholder="Password" aria-label="Password">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-primary" type="submit" onclick="signIn()">Inscription</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
-                </div>
-            </div>
+            <?php
+            $modal = in;
+            modalContent($modal);
+            ?>
         </div>
     </div>
     <?php
 }
 
-//Modal de Résultat d'Inscription et de Connexion
-//Dépend de 2 Variables Booléenes et peut prendre 4 valeurs.
-function modalResult() {
+function modalContent($modal) {
+    /*
+     *  modalContent permet de remplir les modals.
+     *    $modal -> 2 valeurs possible pour 2 modal à remplir. co pour modalConnexion, in pour modalInscription.  
+     */
+    if ($modal == 'co') {
+        /*
+         * Si $_SESSION['connexion'] est set, alors l'utilisateur à deja tenté de se connecter.
+         * Il y a alors 2 possibilités isset ou isnotset: 
+         *   -   Pour isset : Si $_SESSION['connexion'] est vrai on affiche connexionTRUE() dans la modal sinon on affiche connexionFALSE()
+         *   -   Pour isnotset : Si $_SESSION['inscription'] est vrai l'utilisateurs a valider son inscription on affiche inscriptionTRUE() sinon firstConnexion();
+         */
+        (isset($_SESSION['connexion'])) ?
+                        (($_SESSION['connexion'] === "TRUE") ?
+                                connexionTRUE() : connexionFALSE()) : (($_SESSION['inscription'] === "TRUE") ?
+                                inscriptionTRUE() : firstConnexion());
+    } else if ($modal == 'in') {
+        /*
+         * Si $_SESSION['inscription'] est set, alors l'utilisateur à deja tenté de s'inscrire.
+         * Il y a alors 2 possibilités isset ou isnotset: 
+         *   -   Pour isset : Si $_SESSION['inscription'] est vrai on affiche firstInscription() dans la modal sinon on affiche inscriptionFALSE()
+         *   -   Pour isnotset : On affiche firstInscription()
+         */
+        (isset($_SESSION['inscription'])) ? ($_SESSION['inscription'] === "TRUE") ? inscriptionTRUE() : inscriptionFALSE() : firstInscription();
+    }
+}
+
+function firstConnexion() {
     ?>
-    <div id = "modalResult" class = "modal" tabindex = "-1" role = "dialog">
-        <div class = "modal-dialog" role = "document">
-            <div class = "modal-content">
-                <?php
-                if (isset($_SESSION['inscription'])) {
-                    if ($_SESSION['inscription']) {
-                        inscriptionTRUE();
-                    } else {
-                        inscriptionFALSE();
-                    }
-                } else if (isset($_SESSION['connexion'])) {
-                    if ($_SESSION['connexion']) {
-                        connexionTRUE();
-                    } else {
-                        connexionFALSE();
-                    }
-                }
-                ?>
-            </div>
+    <div class = "modal-header">
+        <h5 class = "modal-title">Bienvenue sur Restologue.<br> Veuillez vous connecter.</h5>
+        <button type = "button" class = "close" data-dismiss = "modal" aria-label = "Close">
+            <span aria-hidden = "true">&times;
+            </span>
+        </button>
+    </div>
+    <div class = "modal-body">
+        <input class = "form-control mr-sm-2" id = "logUsername" placeholder = "Username" aria-label = "Username">
+        <input class = "form-control mr-sm-2" id = "logPassword" placeholder = "Password" aria-label = "Password">
+    </div>
+    <div class = "modal-footer">
+        <button class = "btn btn-primary" type = "submit" onclick = "logIn()">Connexion</button>
+        <button type = "button" class = "btn btn-secondary" data-dismiss = "modal" data-toggle = "modal" data-target = "#modalInscription">Inscription</button>
+    </div>
+    <?php
+}
+
+function firstInscription() {
+    ?>
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Bienvenue sur Restologue.<br> Veuillez vous inscrire pour profiter de nos services.</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <input class="form-control mr-sm-2" id="signUsername" placeholder="Username" aria-label="Username">
+            <input class="form-control mr-sm-2" id="signPassword" placeholder="Password" aria-label="Password">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="submit" onclick="signIn()">Inscription</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
         </div>
     </div>
     <?php
@@ -101,15 +119,12 @@ function connexionFALSE() {
         </button>
     </div>
     <div class="modal-body">
-        <form class="form-inline" method="post" action="/scripts/connexion.php">
-            <input class="form-control mr-sm-2" name="usernameCo" placeholder="Username" aria-label="Username">
-            <input class="form-control mr-sm-2" name="passwordCo" placeholder="Password" aria-label="Password">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">Connexion</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </form>
+        <input class="form-control mr-sm-2" id="logUsername" placeholder="Username" aria-label="Username">
+        <input class="form-control mr-sm-2" id="logPassword" placeholder="Password" aria-label="Password">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" onclick="logIn()">Connexion</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     </div>
     <?php
 }
@@ -123,15 +138,12 @@ function inscriptionTRUE() {
         </button>
     </div>
     <div class="modal-body">
-        <form class="form-inline" method="post" action="/scripts/connexion.php">
-            <input class="form-control mr-sm-2" name="usernameCo" placeholder="Username" aria-label="Username">
-            <input class="form-control mr-sm-2" name="passwordCo" placeholder="Password" aria-label="Password">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">Connexion</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </form>
+        <input class="form-control mr-sm-2" id="logUsername" placeholder="Username" aria-label="Username">
+        <input class="form-control mr-sm-2" id="logPassword" placeholder="Password" aria-label="Password">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" onclick="logIn()">Connexion</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
     </div>
     <?php
 }
@@ -145,15 +157,12 @@ function inscriptionFALSE() {
         </button>
     </div>
     <div class="modal-body">
-        <form class="form-inline" method="post" action="/scripts/connexion.php">
-            <input class="form-control mr-sm-2" name="usernameIn" placeholder="Username" aria-label="Username">
-            <input class="form-control mr-sm-2" name="passwordIn" placeholder="Password" aria-label="Password">
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" type="submit">Inscription</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
-            </div>
-        </form>
-    </div>  
+        <input class="form-control mr-sm-2" id="signUsername" placeholder="Username" aria-label="Username">
+        <input class="form-control mr-sm-2" id="signPassword" placeholder="Password" aria-label="Password">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="submit" onclick="signIn()">Inscription</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#modalInscription">Close</button>
+    </div>
     <?php
 }
