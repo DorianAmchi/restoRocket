@@ -8,7 +8,7 @@ function modalConnexion() {
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <?php
-                $modal = co;
+                $modal = 'co';
                 modalContent($modal);
                 ?>
             </div>
@@ -23,7 +23,7 @@ function modalInscription() {
     <div id="modalInscription" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <?php
-            $modal = in;
+            $modal = 'in';
             modalContent($modal);
             ?>
         </div>
@@ -36,7 +36,7 @@ function modalContent($modal) {
      *  modalContent permet de remplir les modals.
      *    $modal -> 2 valeurs possible pour 2 modal à remplir. co pour modalConnexion, in pour modalInscription.  
      */
-    if ($modal == 'co') {
+    if ($modal === 'co') {
         /*
          * Si $_SESSION['connexion'] est set, alors l'utilisateur à deja tenté de se connecter.
          * Il y a alors 2 possibilités isset ou isnotset: 
@@ -44,10 +44,10 @@ function modalContent($modal) {
          *   -   Pour isnotset : Si $_SESSION['inscription'] est vrai l'utilisateurs a valider son inscription on affiche inscriptionTRUE() sinon firstConnexion();
          */
         (isset($_SESSION['connexion'])) ?
-                        (($_SESSION['connexion'] === "TRUE") ?
-                                connexionTRUE() : connexionFALSE()) : (($_SESSION['inscription'] === "TRUE") ?
+                        ($_SESSION['connexion'] === "TRUE" ?
+                                connexionTRUE() : connexionFALSE()) : ((isset($_SESSION['inscription']) && $_SESSION['inscription']) === "TRUE" ?
                                 inscriptionTRUE() : firstConnexion());
-    } else if ($modal == 'in') {
+    } else if ($modal === 'in') {
         /*
          * Si $_SESSION['inscription'] est set, alors l'utilisateur à deja tenté de s'inscrire.
          * Il y a alors 2 possibilités isset ou isnotset: 

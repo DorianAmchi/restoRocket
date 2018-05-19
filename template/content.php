@@ -1,5 +1,3 @@
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/content/modalUser.php'; ?>
-
 <?php
 
 if (!isset($_GET["page"])) {

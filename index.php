@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include 'template/header.php';
-include 'template/navbar.php';
-include 'template/content.php';
-include 'template/footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/template/header.php';
+include $_SERVER['DOCUMENT_ROOT'].'/template/navbar.php';
+include $_SERVER['DOCUMENT_ROOT'].'/template/content.php';
+include $_SERVER['DOCUMENT_ROOT'].'/template/footer.php';
