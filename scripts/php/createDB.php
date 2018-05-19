@@ -6,9 +6,9 @@
 
 //On récupère le contenu du fichier ciblé sous forme de chaîne de caractères.
 $sql = file_get_contents("../../db/database.sql");
-$dbh = new PDO('mysql:host=localhost;','dorian','');
+$dbh = new PDO('mysql:host=localhost;','root','');
 $dbh ->exec($sql);
 echo $sql;
 
-include '../../db/plats.php';
-var_dump(get_plat());
+//include '../../db/plats.php';
+//var_dump(get_plat());
