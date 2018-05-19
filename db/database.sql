@@ -64,17 +64,19 @@ create table if not exists TYPES_DE_PLAT(
 /*Insertion de données - jeu de test*/
 
 /*Ajout des entrées dans la table des types de plats.*/
-
-insert into TYPES_DE_PLAT (nom) VALUES('entree');
-insert into TYPES_DE_PLAT (nom) VALUES('plat');
-insert into TYPES_DE_PLAT (nom) VALUES('dessert');
-
-insert into PLATS(id_type, nom, prix) VALUES(1, 'salade grecque', 4.5);
-insert into PLATS(id_type, nom, prix) VALUES(2, 'doner  kebab', 5.5);
-insert into PLATS(id_type, nom, prix) VALUES(3, 'spaghout', 3);
-
-insert into MENUS(nom, description)  VALUES("Les romains","Les jeux pour le plaisirs");
-
-update PLATS SET id_menu = 1 where id=1;
-update PLATS SET id_menu = 1 where id=2;
-update PLATS SET id_menu = 1 where id=3;
+insert into USERS (username, password, email) VALUES("dorian","amchi","dorian.amchji@goak.com");
+insert into USERS (username, password, email) VALUES("fa","chi","amchji@goak.com");
+insert into USERS (username, password, email) VALUES("qsd","aqdsi","qsdqsdji@goak.com");
+-- insert into TYPES_DE_PLAT (nom) VALUES('entree');
+-- insert into TYPES_DE_PLAT (nom) VALUES('plat');
+-- insert into TYPES_DE_PLAT (nom) VALUES('dessert');
+-- 
+-- insert into PLATS(id_type, nom, prix) VALUES(1, 'salade grecque', 4.5);
+-- insert into PLATS(id_type, nom, prix) VALUES(2, 'doner  kebab', 5.5);
+-- insert into PLATS(id_type, nom, prix) VALUES(3, 'spaghout', 3);
+-- 
+-- insert into MENUS(nom, description)  VALUES("Les romains","Les jeux pour le plaisirs");
+-- 
+-- update PLATS SET id_menu = 1 where id=1;
+-- update PLATS SET id_menu = 1 where id=2;
+-- update PLATS SET id_menu = 1 where id=3;
