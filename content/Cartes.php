@@ -6,8 +6,6 @@
     </div>
     <div class='row justify-content-md-center gestionCarte'>
         <div class='col text-center carte'>
-            <?php include 'scripts/getRestaurant.php';
-?>
         </div>
         <div class='col text-center cartes'>  
             <form class="form-inline">
@@ -16,6 +14,4 @@
         </div>
     </div>
 </div>
-
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/content/modalCartes.php'; ?>
 
