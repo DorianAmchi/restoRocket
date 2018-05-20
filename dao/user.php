@@ -73,7 +73,6 @@ function add_user($user) {
     $request = "insert into users (username, password, email) "
             . "VALUES('" . $user['username'] . "','" . $user['password'] . "','" . $user['email'] . "')";
     $dbh->exec($request);
-    echo $request;
 }
 
 function get_users() {
