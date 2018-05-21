@@ -5,6 +5,9 @@
 <!--affectation des $_GET dans des $_SESSION et traitement des modals-->
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/scripts/php/scriptsArgument.php';
+if(isset($_GET['page']) && $_GET['page']=="Cartes"){
+    ?><script type="text/javascript" src="scripts/js/restaurant.js"></script><?php
+}
 ?>
 <!--Permet de clean l'url apres l'affectation des $_GET dans des $_SESSION grace au scriptsArguments.php-->
 <!--<script type="text/javascript" src="/scripts/js/removeArg.js"></script>;;-->
