@@ -1,10 +1,25 @@
 <?php
-include 'user.php';
+include 'restaurants.php';
 
 $user=array(
     'username'=>'dodo',
     'password'=>'dodo'
 );
-var_dump(log_user($user));
-var_dump($user['username']);
-var_dump(redirect_user(log_user($user), "co", $user['username']));
+$restos = array();
+$restaurants = get_restaurants();
+foreach($restaurants as $restaurant){
+    $resto = array();
+    foreach($restaurant as $key => $value){
+        if(!is_numeric($key)){
+            $temp=array(
+            $key => $value
+        );
+            array_push($resto, $temp);
+        }
+        
+    }   
+    array_push($restos, $resto);
+
+}
+
+   var_dump($restos);
