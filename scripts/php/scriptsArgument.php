@@ -26,11 +26,11 @@ if (!isset($_SESSION['connexion']) && !isset($_SESSION['inscription'])) {
     if (isset($_SESSION['connexion']) || $_SESSION['inscription']==="TRUE") {
         modalConnexion();
         modalInscription();
-        onloadModalCo();
+        onloadModalCo();        
     } else if (isset($_SESSION['inscription']) && $_SESSION['inscription']==="FALSE") {
         modalConnexion();
         modalInscription();
-        onloadModalIn();
+        onloadModalIn();        
     }
 }
 
@@ -39,7 +39,8 @@ function onloadModalCo() {
     ?><script type='text/javascript'>
         $(document).ready(function () {
             $('#modalConnexion').modal('toggle');
-        });</script><?php
+        });</script>
+            <?php
         
 }
 
